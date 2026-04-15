@@ -208,7 +208,7 @@ void setup() {
   MX_DMA_Init();
   MX_USART2_UART_Init();
  
-  Serial.begin(1000000);
+  Serial.begin(115200);
 
   HAL_NVIC_SetPriority(OTG_FS_IRQn, 0, 0);
 

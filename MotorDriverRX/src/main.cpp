@@ -204,7 +204,7 @@ void setup() {
   MX_DMA_Init();
   MX_USART2_UART_Init();
 
-  Serial.begin(1000000);
+  Serial.begin(115200);
 
   HAL_UART_Receive_DMA(&huart2, uart_rx_buffer, UART_RX_BUFFER_SIZE);
 
