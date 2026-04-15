@@ -170,8 +170,7 @@ extern "C" void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart)
   {
     memcpy((void*)&imu_angle_y, &uart_rx_buffer[1], 4);
   }
-  // if sync byte wrong, circular DMA just keeps rolling
-  // and will re-align on the next packet naturally
+
 }
 
 MagneticSensorSPI sensor = MagneticSensorSPI(AS5147_SPI, CS1);
@@ -273,7 +272,7 @@ void setup() {
   _delay(1000);
 }
 
-unsigned long lastPrintTime = 0;   // last time we printed IMU values
+unsigned long lastPrintTime = 0;
 const unsigned long printInterval = 10; // 100 ms = 0.1 s
 
 void loop() {
