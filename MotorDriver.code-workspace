@@ -1,0 +1,13 @@
+{
+	"folders": [
+		{
+			"name": "MotorDriver",
+			"path": "MotorDriver"
+		},
+		{
+			"name": "MotorDriverRX",
+			"path": "MotorDriverRX"
+		}
+	],
+	"settings": {}
+}

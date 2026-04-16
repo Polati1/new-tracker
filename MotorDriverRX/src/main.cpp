@@ -184,7 +184,7 @@ volatile float derivative = 0;
 volatile float imu_angle_y = 0;
 const float alpha = 0.9;
 
-float pid_Kp = 0.0;
+const float pid_Kp = 0.015;
 const float pid_Ki = 2.15;
 const float pid_Kd = 0.0;
 
@@ -272,24 +272,13 @@ void setup() {
   _delay(1000);
 }
 
-unsigned long lastPrintTime = 0;
-const unsigned long printInterval = 10; // 100 ms = 0.1 s
-
 void loop() {
 
-    unsigned long now = millis();
-  if (now - lastPrintTime >= printInterval) {
-    lastPrintTime = now;
+
+  if (dma_rx_complete) {
     
-    if (pid_Kp < 0.017) {
-      pid_Kp += 0.017 / (3000 / printInterval);
-    }
-  }
-
-
-    if (dma_rx_complete)
-  {
     dma_rx_complete = false;
+  
   }
 
   // motor.monitor();
